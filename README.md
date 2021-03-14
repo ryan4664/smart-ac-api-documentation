@@ -1,3 +1,7 @@
+# Smart AC Public API 
+
+A Postman collection containing all of the below endpoints can be found [here.](https://github.com/ryan4664/smart-ac-api-documentation/blob/main/Smart-AC-Public%20API.postman_collection)
+
 ## Register Device
 Registers a device in the database.  
 ```http
