@@ -61,3 +61,72 @@ Invalid secret.
   "error" : string,
 }
 ```
+
+## Update
+Inserts a new `device_sensor_data` record.  
+```http
+POST /devices/update
+headers: {
+    'Authorization': 'YOUR_TOKEN'
+}
+```
+```javascript
+{
+  "temp_celsius": string,
+  "air_humidity_percentage": string,
+  "carbon_monoxide_level": string,
+  "status": string,
+}
+```
+### Success (200)
+
+### Error (401)
+Invalid token.
+```javascript
+{
+  "error" : string,
+}
+```
+
+## Update Bulk
+Inserts multiple new `device_sensor_data` records.  A maximum of 500 records can be past in.  
+```http
+POST /devices/update
+headers: {
+    'Authorization': 'YOUR_TOKEN'
+}
+```
+```javascript
+[
+  {
+    "temp_celsius": string,
+    "air_humidity_percentage": string,
+    "carbon_monoxide_level": string,
+    "status": string,
+  },
+  {
+    "temp_celsius": string,
+    "air_humidity_percentage": string,
+    "carbon_monoxide_level": string,
+    "status": string,
+  },
+  ...
+]
+```
+### Success (200)
+
+### Error (400)
+Occurs when there are too many records or the value passed in is not an array.
+```javascript
+{
+  "error" : string,
+}
+```
+
+### Error (401)
+Invalid token.
+```javascript
+{
+  "error" : string,
+}
+```
